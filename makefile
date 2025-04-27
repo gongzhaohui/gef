@@ -7,7 +7,6 @@ BACKEND_PORT := 3000     # Echo 后端端口
 .PHONY: dev
 dev: 
 	@echo "🚀 Starting development environment..."
-	@echo "Frontend: http://localhost:${FRONTEND_PORT}"
 	@echo "API: http://localhost:${BACKEND_PORT}"
 	@make -j 2 dev-frontend dev-backend
 

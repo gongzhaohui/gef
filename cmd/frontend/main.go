@@ -1,39 +1,36 @@
 package main
 
 import (
-	"gef/pkg/components"
-	"log"
-	"net/http"
+	"gef/pkg/components/nested_table"
 
 	"github.com/maxence-charriere/go-app/v10/pkg/app"
 )
 
-// var webFiles embed.FS
-
-func main() {
-	app.Route("/", func() app.Composer { return &components.DataTable{} })
-	// app.HandleStatic("/", webFiles)
-	app.RunWhenOnBrowser()
-	http.Handle("/", &app.Handler{
-		Name:        "Hello",
-		Description: "An Hello World! example",
-	})
-
-	if err := http.ListenAndServe(":8000", nil); err != nil {
-		log.Fatal(err)
-	}
-
+type MyApp struct {
+	app.Compo
 }
 
-// 前端服务（开发模式）
-// func runHTTPServer() {
-// 	handler := &app.Handler{
-// 		Name: "My App",
-// 		// Resources: http.FileSystem{webFiles},
-// 		// AutoUpdate: true,
-// 	}
+func (m *MyApp) Render() app.UI {
+	columns := []nested_table.Column{
+		{Title: "Name", Key: "name", Sortable: true},
+		{Title: "Age", Key: "age", Sortable: true},
+		{Title: "Address", Key: "address"},
+	}
 
-// 	if err := http.ListenAndServe(":8080", handler); err != nil {
-// 		log.Fatal(err)
-// 	}
-// }
+	table := nested_table.NewNestedTable(columns, 5)
+
+	// 添加数据
+	table.AddRow(&nested_table.NestedRow{
+		Data: map[string]interface{}{"name": "John", "age": 30, "address": "123 Main St"},
+	})
+	table.AddRow(&nested_table.NestedRow{
+		Data: map[string]interface{}{"name": "Jane", "age": 28, "address": "456 Elm St"},
+	})
+
+	return table.Render()
+}
+
+func main() {
+	app.Route("/", func() app.Composer { return &MyApp{} })
+	app.RunWhenOnBrowser()
+}
