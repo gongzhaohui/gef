@@ -111,7 +111,7 @@ func (nt *NestedTable) Render() app.UI {
 	for _, col := range nt.Columns {
 		if col.Sortable {
 			sb.WriteString(fmt.Sprintf(
-				"<th onclick='sort(\"%s\")'>%s <span>%s</span></th>\n",
+				"<th onClick='sort(\"%s\")'>%s <span>%s</span></th>\n",
 				col.Key,
 				col.Title,
 				nt.getSortIndicator(col.Key),
@@ -152,7 +152,7 @@ func (nt *NestedTable) renderPagination() string {
 		if i == nt.CurrentPage {
 			sb.WriteString(fmt.Sprintf("<span class='ant-pagination-item ant-pagination-item-active'>%d</span>\n", i))
 		} else {
-			sb.WriteString(fmt.Sprintf("<span class='ant-pagination-item' onclick='goToPage(%d)'>%d</span>\n", i, i))
+			sb.WriteString(fmt.Sprintf("<span class='ant-pagination-item' onClick='goToPage(%d)'>%d</span>\n", i, i))
 		}
 	}
 	sb.WriteString("</div>\n")

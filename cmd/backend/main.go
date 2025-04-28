@@ -28,6 +28,9 @@ func main() {
 			if strings.HasSuffix(c.Request().URL.Path, ".wasm") {
 				c.Response().Header().Set("Content-Type", "application/wasm")
 			}
+			if strings.HasSuffix(c.Request().URL.Path, ".json") {
+				c.Response().Header().Set("Content-Type", "application/json")
+			}
 			return next(c)
 		}
 	})
