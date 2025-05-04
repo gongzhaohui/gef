@@ -1,0 +1,292 @@
+{
+    "tabs": [
+        {
+            "id": "home",
+            "title": "Home",
+            "groups": [
+                {
+                    "title": "Clipboard",
+                    "buttons": [
+                        {
+                            "id": "paste",
+                            "title": "Paste",
+                            "icon": "fa-clipboard"
+                        },
+                        {
+                            "id": "cut",
+                            "title": "Cut",
+                            "icon": "fa-cut"
+                        },
+                        {
+                            "id": "copy",
+                            "title": "Copy",
+                            "icon": "fa-copy"
+                        },
+                        {
+                            "id": "formatPainter",
+                            "title": "Format Painter",
+                            "icon": "fa-paint-brush"
+                        }
+                    ]
+                },
+                {
+                    "title": "Font",
+                    "buttons": [
+                        {
+                            "id": "font",
+                            "title": "Font",
+                            "icon": "fa-font"
+                        },
+                        {
+                            "id": "size",
+                            "title": "Size",
+                            "icon": "fa-text-height"
+                        },
+                        {
+                            "id": "bold",
+                            "title": "Bold",
+                            "icon": "fa-bold"
+                        },
+                        {
+                            "id": "italic",
+                            "title": "Italic",
+                            "icon": "fa-italic"
+                        },
+                        {
+                            "id": "underline",
+                            "title": "Underline",
+                            "icon": "fa-underline"
+                        }
+                    ]
+                },
+                {
+                    "title": "Paragraph",
+                    "buttons": [
+                        {
+                            "id": "alignLeft",
+                            "title": "Align Left",
+                            "icon": "fa-align-left"
+                        },
+                        {
+                            "id": "alignCenter",
+                            "title": "Align Center",
+                            "icon": "fa-align-center"
+                        },
+                        {
+                            "id": "alignRight",
+                            "title": "Align Right",
+                            "icon": "fa-align-right"
+                        },
+                        {
+                            "id": "alignJustify",
+                            "title": "Align Justify",
+                            "icon": "fa-align-justify"
+                        },
+                        {
+                            "id": "numbering",
+                            "title": "Numbering",
+                            "icon": "fa-list-ol"
+                        },
+                        {
+                            "id": "bullets",
+                            "title": "Bullets",
+                            "icon": "fa-list-ul"
+                        }
+                    ]
+                },
+                {
+                    "title": "Styles",
+                    "buttons": [
+                        {
+                            "id": "styles",
+                            "title": "Styles",
+                            "icon": "fa-th-large"
+                        }
+                    ]
+                },
+                {
+                    "title": "Editing",
+                    "buttons": [
+                        {
+                            "id": "find",
+                            "title": "Find",
+                            "icon": "fa-search"
+                        },
+                        {
+                            "id": "replace",
+                            "title": "Replace",
+                            "icon": "fa-exchange"
+                        },
+                        {
+                            "id": "select",
+                            "title": "Select",
+                            "icon": "fa-mouse-pointer"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "insert",
+            "title": "Insert",
+            "groups": [
+                {
+                    "title": "Pages",
+                    "buttons": [
+                        {
+                            "id": "blankPage",
+                            "title": "Blank Page",
+                            "icon": "fa-file-o"
+                        }
+                    ]
+                },
+                {
+                    "title": "Tables",
+                    "buttons": [
+                        {
+                            "id": "table",
+                            "title": "Table",
+                            "icon": "fa-table"
+                        },
+                        {
+                            "id": "insertChart",
+                            "title": "Chart",
+                            "icon": "fa-bar-chart"
+                        }
+                    ]
+                },
+                {
+                    "title": "Illustrations",
+                    "buttons": [
+                        {
+                            "id": "picture",
+                            "title": "Picture",
+                            "icon": "fa-picture-o"
+                        },
+                        {
+                            "id": "shapes",
+                            "title": "Shapes",
+                            "icon": "fa-square-o"
+                        },
+                        {
+                            "id": "smartArt",
+                            "title": "SmartArt",
+                            "icon": "fa-sitemap"
+                        },
+                        {
+                            "id": "chart",
+                            "title": "Chart",
+                            "icon": "fa-bar-chart"
+                        }
+                    ]
+                },
+                {
+                    "title": "Links",
+                    "buttons": [
+                        {
+                            "id": "link",
+                            "title": "Link",
+                            "icon": "fa-link"
+                        },
+                        {
+                            "id": "bookmark",
+                            "title": "Bookmark",
+                            "icon": "fa-bookmark"
+                        }
+                    ]
+                },
+                {
+                    "title": "Header & Footer",
+                    "buttons": [
+                        {
+                            "id": "header",
+                            "title": "Header",
+                            "icon": "fa-header"
+                        },
+                        {
+                            "id": "footer",
+                            "title": "Footer",
+                            "icon": "fa-footer"
+                        },
+                        {
+                            "id": "pageNumber",
+                            "title": "Page Number",
+                            "icon": "fa-list-ol"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "pageLayout",
+            "title": "Page Layout",
+            "groups": [
+                {
+                    "title": "Page Setup",
+                    "buttons": [
+                        {
+                            "id": "theme",
+                            "title": "Theme",
+                            "icon": "fa-paint-brush"
+                        },
+                        {
+                            "id": "margins",
+                            "title": "Margins",
+                            "icon": "fa-columns"
+                        },
+                        {
+                            "id": "orientation",
+                            "title": "Orientation",
+                            "icon": "fa-rotate-right"
+                        },
+                        {
+                            "id": "size",
+                            "title": "Size",
+                            "icon": "fa-arrows-alt"
+                        }
+                    ]
+                },
+                {
+                    "title": "Paragraph",
+                    "buttons": [
+                        {
+                            "id": "indent",
+                            "title": "Increase Indent",
+                            "icon": "fa-indent"
+                        },
+                        {
+                            "id": "outdent",
+                            "title": "Decrease Indent",
+                            "icon": "fa-outdent"
+                        },
+                        {
+                            "id": "lineSpacing",
+                            "title": "Line Spacing",
+                            "icon": "fa-text-height"
+                        }
+                    ]
+                },
+                {
+                    "title": "Arrange",
+                    "buttons": [
+                        {
+                            "id": "position",
+                            "title": "Position",
+                            "icon": "fa-arrows"
+                        },
+                        {
+                            "id": "wrapText",
+                            "title": "Wrap Text",
+                            "icon": "fa-align-left"
+                        },
+                        {
+                            "id": "group",
+                            "title": "Group",
+                            "icon": "fa-object-group"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}    

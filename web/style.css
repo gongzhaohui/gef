@@ -1,0 +1,275 @@
+/* 基础样式 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 12px;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.office-app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* 标题栏样式 */
+.title-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ccc;
+    padding: 0 10px;
+}
+
+.app-title {
+    font-weight: bold;
+    color: #333;
+}
+
+.document-title {
+    color: #666;
+}
+
+.window-controls {
+    display: flex;
+}
+
+.window-button {
+    width: 25px;
+    height: 25px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 10px;
+}
+
+.window-button:hover {
+    background-color: #e0e0e0;
+}
+
+.window-button.close:hover {
+    background-color: #e81123;
+    color: white;
+}
+
+/* Ribbon样式 */
+.ribbon {
+    background-color: white;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+}
+
+.ribbon.vertical {
+    flex-direction: row;
+    height: 100%;
+}
+
+.file-menu {
+    background-color: #1e4e79;
+    color: white;
+    padding: 5px 10px;
+}
+
+.file-button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 13px;
+    padding: 5px 10px;
+}
+
+.file-button:hover {
+    background-color: #0072c6;
+}
+
+.tab-bar {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+}
+
+.tab-bar.vertical {
+    flex-direction: column;
+    border-right: 1px solid #ccc;
+    border-bottom: none;
+}
+
+.tab {
+    padding: 8px 15px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 12px;
+    color: #333;
+}
+
+.tab.active {
+    background-color: white;
+    border-bottom: 3px solid #0072c6;
+    font-weight: bold;
+}
+
+.tab-bar.vertical .tab.active {
+    border-bottom: none;
+    border-right: 3px solid #0072c6;
+}
+
+.tab:hover:not(.active) {
+    background-color: #e6f2ff;
+}
+
+.tab-content {
+    padding: 5px;
+}
+
+.ribbon-row {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 5px 0;
+}
+
+.ribbon-column {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    overflow-y: auto;
+    gap: 10px;
+    padding: 0 5px;
+}
+
+.ribbon-group {
+    min-width: 100px;
+    border-right: 1px solid #eee;
+    padding-right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ribbon-group.vertical {
+    min-height: 100px;
+    border-right: none;
+    border-bottom: 1px solid #eee;
+    padding-right: 0;
+    padding-bottom: 10px;
+}
+
+.group-title {
+    text-align: center;
+    color: #666;
+    font-size: 11px;
+    margin-bottom: 5px;
+}
+
+.group-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ribbon-button {
+    background: none;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    padding: 8px 5px;
+    width: 70px;
+    margin: 2px;
+    cursor: pointer;
+    font-size: 11px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ribbon-button:hover {
+    border-color: #c5dbec;
+    background-color: #e6f2ff;
+}
+
+.ribbon-button:active {
+    border-color: #7da2ce;
+    background-color: #c5dbec;
+}
+
+.ribbon-footer {
+    border-top: 1px solid #ccc;
+    text-align: right;
+    padding: 2px 5px;
+}
+
+.minimize-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 10px;
+}
+
+/* 拖拽手柄样式 */
+.drag-handle {
+    cursor: move;
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ccc;
+    height: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.drag-handle.vertical {
+    border-bottom: none;
+    border-right: 1px solid #ccc;
+    width: 10px;
+    height: auto;
+}
+
+.drag-handle::before {
+    content: "···";
+    letter-spacing: 2px;
+    color: #666;
+}
+
+.drag-handle.vertical::before {
+    transform: rotate(90deg);
+}
+
+/* 工作区样式 */
+.workspace {
+    flex: 1;
+    overflow: auto;
+    padding: 10px;
+}
+
+.document-editor {
+    width: 100%;
+    height: 100%;
+    border: none;
+    resize: none;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    padding: 10px;
+    outline: none;
+}
+
+/* 加载指示器样式 */
+.loading-indicator {
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+}
+
+/* 错误消息样式 */
+.error-message {
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #d8000c;
+    background-color: #ffbaba;
+}    

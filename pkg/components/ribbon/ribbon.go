@@ -1,6 +1,8 @@
 package ribbon
 
 import (
+	"encoding/json"
+
 	"github.com/maxence-charriere/go-app/v10/pkg/app"
 )
 
@@ -37,6 +39,11 @@ func (c *Ribbon) OnMount(ctx app.Context) {
 	})
 }
 
-func getMenuData() {
-	panic("unimplemented")
+func getMenuData() IGroup {
+	var group IGroup
+	err := json.Unmarshal([]byte("{}"), &group)
+	if err != nil {
+		panic(err)
+	}
+	return group
 }
