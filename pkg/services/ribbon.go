@@ -2,7 +2,7 @@ package services
 
 import (
 	"encoding/json"
-	"gef/pkg/services/types"
+	"gef/pkg/components/ribbon/types"
 	"log"
 	"net/http"
 )
@@ -20,7 +20,7 @@ func (s *RibbonService) LoadRibbonMenu() (types.RibbonMenu, error) {
 	var menu types.RibbonMenu
 
 	// 使用http包代替app.Get
-	resp, err := http.Get("/ribbon_data.json")
+	resp, err := http.Get("/web/ribbon_data.json")
 	if err != nil {
 		log.Printf("Failed to fetch ribbon data: %v", err)
 		return menu, err
