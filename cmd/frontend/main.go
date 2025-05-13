@@ -12,16 +12,24 @@ import (
 type OfficeApp struct {
 	app.Compo
 	// activeTab              string
-	document   string
-	layoutMode string // "vertical" 或 "horizontal"
-
+	document               string
+	layoutMode             string // "vertical" 或 "horizontal"
+	IsUpperRibbonCollapsed bool
+	IsLowerRibbonCollapsed bool
+	UpperActiveTab         string
+	LowerActiveTab         string
 }
 
 // 初始化
 func (a *OfficeApp) OnMount(ctx app.Context) {
 	a.layoutMode = "vertical" // 默认垂直布局（上中下）
 	a.document = "New Document"
-	ctx.Handle("toggleLayout", a.handleRibbonAction)
+	a.IsUpperRibbonCollapsed = false
+	a.IsLowerRibbonCollapsed = true
+	a.UpperActiveTab = "home"
+	a.LowerActiveTab = "home"
+	log.Printf("app mount")
+	ctx.ObserveState("layoutMode", &a.layoutMode)
 
 }
 
@@ -29,19 +37,19 @@ func (a *OfficeApp) OnMount(ctx app.Context) {
 func (a *OfficeApp) Render() app.UI {
 	// 根据布局模式应用不同的类
 	layoutClass := "app-layout-vertical"
-	// if a.layoutMode == "horizontal" {
-	// 	layoutClass = "app-layout-horizontal"
-	// }
+
+	log.Printf("app render Layout mode : %v", a.layoutMode)
 	return app.Div().Class("office-app", layoutClass).Body(
 		&widgets.TitleBar{DocumentTitle: a.document},
 		&widgets.FileMenu{
-			OnLayoutToggle: func(ctx app.Context) {
-				// &widgets.Receptacle.LayoutMode = a.layoutMode
-
-			},
+			OnLayoutToggle: a.toggleLayout,
 		},
 		&widgets.Receptacle{
-			LayoutMode: a.layoutMode,
+			LayoutMode:             a.layoutMode,
+			IsUpperRibbonCollapsed: a.IsUpperRibbonCollapsed,
+			IsLowerRibbonCollapsed: a.IsLowerRibbonCollapsed,
+			UpperActiveTab:         a.UpperActiveTab,
+			LowerActiveTab:         a.LowerActiveTab,
 			// handleRibbonAction: a.handleRibbonAction,
 		},
 		// 状态栏
@@ -50,15 +58,17 @@ func (a *OfficeApp) Render() app.UI {
 		},
 	)
 }
-func (a *OfficeApp) handleRibbonAction(ctx app.Context, action app.Action) {
+func (a *OfficeApp) toggleLayout(ctx app.Context) {
+
 	// 切换布局模式
-	log.Printf("Layout mode : %v", a.layoutMode)
+	log.Printf("app.toggle Layout mode : %v", a.layoutMode)
 	if a.layoutMode == "vertical" {
 		a.layoutMode = "horizontal"
 	} else {
 		a.layoutMode = "vertical"
 	}
-	ctx.Update()
+	ctx.SetState("layoutMode", a.layoutMode)
+	// ctx.Update()
 	log.Printf("Layout mode changed to: %v", a.layoutMode)
 }
 func main() {
