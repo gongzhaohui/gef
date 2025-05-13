@@ -12,24 +12,15 @@ import (
 type OfficeApp struct {
 	app.Compo
 	// activeTab              string
-	document               string
-	layoutMode             string // "vertical" 或 "horizontal"
-	IsUpperRibbonCollapsed bool
-	IsLowerRibbonCollapsed bool
-	UpperActiveTab         string
-	LowerActiveTab         string
+	document   string
+	layoutMode string // "vertical" 或 "horizontal"
 }
 
 // 初始化
 func (a *OfficeApp) OnMount(ctx app.Context) {
 	a.layoutMode = "vertical" // 默认垂直布局（上中下）
 	a.document = "New Document"
-	a.IsUpperRibbonCollapsed = false
-	a.IsLowerRibbonCollapsed = true
-	a.UpperActiveTab = "home"
-	a.LowerActiveTab = "home"
-	log.Printf("app mount")
-	ctx.ObserveState("layoutMode", &a.layoutMode)
+	// ctx.ObserveState("layoutMode", &a.layoutMode)
 
 }
 
@@ -38,19 +29,13 @@ func (a *OfficeApp) Render() app.UI {
 	// 根据布局模式应用不同的类
 	layoutClass := "app-layout-vertical"
 
-	log.Printf("app render Layout mode : %v", a.layoutMode)
 	return app.Div().Class("office-app", layoutClass).Body(
 		&widgets.TitleBar{DocumentTitle: a.document},
 		&widgets.FileMenu{
 			OnLayoutToggle: a.toggleLayout,
 		},
 		&widgets.Receptacle{
-			LayoutMode:             a.layoutMode,
-			IsUpperRibbonCollapsed: a.IsUpperRibbonCollapsed,
-			IsLowerRibbonCollapsed: a.IsLowerRibbonCollapsed,
-			UpperActiveTab:         a.UpperActiveTab,
-			LowerActiveTab:         a.LowerActiveTab,
-			// handleRibbonAction: a.handleRibbonAction,
+			LayoutMode: a.layoutMode,
 		},
 		// 状态栏
 		&widgets.StatusBar{
@@ -67,7 +52,7 @@ func (a *OfficeApp) toggleLayout(ctx app.Context) {
 	} else {
 		a.layoutMode = "vertical"
 	}
-	ctx.SetState("layoutMode", a.layoutMode)
+	// ctx.SetState("layoutMode", a.layoutMode)
 	// ctx.Update()
 	log.Printf("Layout mode changed to: %v", a.layoutMode)
 }
