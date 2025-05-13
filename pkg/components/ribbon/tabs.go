@@ -11,28 +11,22 @@ import (
 // TabBar 组件
 type TabBar struct {
 	app.Compo
-	Tabs        []types.Tab
-	ActiveTab   string
-	IsCollapsed bool
-	OnClick     func(string)
-	LayoutMode  string
+	Tabs             []types.Tab
+	ActiveTab        string
+	IsCollapsed      bool
+	OnTabClick       func(app.Context, string)
+	LayoutMode       string
+	RibbonPosition   string // "upper" 或 "lower"
+	OnToggleCollapse func(app.Context)
 }
 
 func (t *TabBar) OnMount(ctx app.Context) {
-	ctx.Handle("toggleLayout", t.ToggleLayout)
 }
 
-// ToggleLayout toggles the layout mode between "horizontal" and "vertical".
-func (t *TabBar) ToggleLayout(ctx app.Context, a app.Action) {
-	if t.LayoutMode == "horizontal" {
-		t.LayoutMode = "vertical"
-	} else {
-		t.LayoutMode = "horizontal"
-	}
-	ctx.Update()
-}
 func (t *TabBar) Render() app.UI {
 	tabBarClass := "tab-bar"
+	if t.IsCollapsed {
+	}
 	if t.LayoutMode == "horizontal" {
 		tabBarClass += " horizontal"
 	}
@@ -40,25 +34,32 @@ func (t *TabBar) Render() app.UI {
 	tabs := make([]app.UI, len(t.Tabs))
 	for i, tab := range t.Tabs {
 		tabs[i] = &TabButton{
-			Tab:         tab,
-			ActiveTab:   t.ActiveTab,
-			IsCollapsed: t.IsCollapsed,
-			LayoutMode:  t.LayoutMode,
-			OnClick:     func() { t.OnClick(tab.ID) },
+			Tab:        tab,
+			ActiveTab:  t.ActiveTab,
+			LayoutMode: t.LayoutMode,
+			OnClick: func(ctx app.Context, e app.Event) {
+				t.OnTabClick(ctx, tab.ID)
+			},
 		}
 	}
 
-	return app.Div().Class(tabBarClass).Body(tabs...)
+	return app.Div().Class(tabBarClass).Body(app.Div().Class("tabs").Body(tabs...), app.Div().Class("tab-bar-actions").Body(
+		app.Button().Class("collapse-button").Text("Collapse").OnClick(func(ctx app.Context, e app.Event) {
+			// ctx.NewAction("collapse")
+			t.OnToggleCollapse(ctx)
+		}),
+	))
+
 }
 
 // TabButton 组件
 type TabButton struct {
 	app.Compo
-	Tab         types.Tab
-	ActiveTab   string
-	IsCollapsed bool
-	LayoutMode  string
-	OnClick     func()
+	Tab       types.Tab
+	ActiveTab string
+	// IsCollapsed bool
+	LayoutMode string
+	OnClick    func(app.Context, app.Event)
 }
 
 func (t *TabButton) Render() app.UI {
@@ -66,14 +67,12 @@ func (t *TabButton) Render() app.UI {
 	if t.Tab.ID == t.ActiveTab {
 		className += " active"
 	}
-	if t.IsCollapsed {
-		className += " collapsed"
-	}
+
 	if t.LayoutMode == "horizontal" {
 		className += " horizontal"
 	}
 	return app.Button().Class(className).ID(t.Tab.ID).Text(t.Tab.Title).
 		OnClick(func(ctx app.Context, e app.Event) {
-			t.OnClick()
+			t.OnClick(ctx, e)
 		})
 }

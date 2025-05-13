@@ -14,10 +14,10 @@ type Tab struct {
 
 // Group 定义Ribbon组的数据结构
 type Group struct {
-	Title     string     `json:"title"`
-	Name      string     `json:"name"`
-	Buttons   []Button   `json:"buttons"`
-	SubGroups []SubGroup `json:"subGroups,omitempty"`
+	Title   string     `json:"title"`
+	Name    string     `json:"name"`
+	Buttons []Button   `json:"buttons"`
+	Groups  []SubGroup `json:"groups,omitempty"`
 }
 
 // SubGroup 定义Ribbon子组的数据结构

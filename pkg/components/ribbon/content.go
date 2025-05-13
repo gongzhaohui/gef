@@ -105,7 +105,7 @@ func (r *RibbonGroup) Render() app.UI {
 	}
 
 	// 渲染子组
-	for _, subGroup := range r.Group.SubGroups {
+	for _, subGroup := range r.Group.Groups {
 		subGroupButtons := make([]app.UI, len(subGroup.Buttons))
 		for i, button := range subGroup.Buttons {
 			subGroupButtons[i] = &RibbonButton{

@@ -11,30 +11,22 @@ import (
 
 type Receptacle struct {
 	app.Compo
-	activeTab              string
+	UpperActiveTab         string
+	LowerActiveTab         string
 	Document               string
 	LayoutMode             string // "vertical" 或 "horizontal"
 	IsUpperRibbonCollapsed bool
 	IsLowerRibbonCollapsed bool
-	ribbonMenu             types.RibbonMenu
+	upperMenu              types.RibbonMenu
+	lowerMenu              types.RibbonMenu
 	ErrorMessage           string
 	isLoading              bool
 	// HandleRibbonAction:func(buttonID string)
 }
 
 func (r *Receptacle) OnMount(ctx app.Context) {
-	r.activeTab = "home"
 	r.Document = "New Document"
-	// r.LayoutMode = "vertical" // 默认垂直布局（上中下）
-	r.IsUpperRibbonCollapsed = false
-	r.IsLowerRibbonCollapsed = true
-	// 初始化Ribbon组件
-	// r.LayoutMode = "vertical" // 默认垂直布局（上中下）
 	r.isLoading = true
-	log.Printf("Ribbon component mounted with initial state: %v", r)
-	ctx.Handle("toggleLayout", r.ToggleLayout)
-	// UpdateLayout updates the layout mode of the Receptacle.
-	log.Printf("Receptacle layout mode : %v", r.LayoutMode)
 	// 使用服务加载Ribbon菜单数据
 	ctx.Async(func() {
 		ribbonService := services.NewRibbonService()
@@ -45,7 +37,8 @@ func (r *Receptacle) OnMount(ctx app.Context) {
 			return
 		}
 		ctx.Dispatch(func(ctx app.Context) {
-			r.ribbonMenu = menu
+			r.upperMenu = menu
+			r.lowerMenu = menu
 			r.isLoading = false
 			// log.Printf("Ribbon menu loaded: %v", r.ribbonMenu)
 		})
@@ -53,16 +46,7 @@ func (r *Receptacle) OnMount(ctx app.Context) {
 	})
 
 }
-func (r *Receptacle) ToggleLayout(ctx app.Context, action app.Action) {
 
-	if r.LayoutMode == "vertical" {
-		r.LayoutMode = "horizontal"
-	} else {
-		r.LayoutMode = "vertical"
-	}
-	log.Printf("Receptacle layout mode changed to: %v", r.LayoutMode)
-	ctx.Update()
-}
 func (r *Receptacle) handleRibbonAction(buttonID string) {
 	log.Printf("Ribbon action: %s", buttonID)
 	// Add logic to handle ribbon button actions
@@ -86,62 +70,70 @@ func (r *Receptacle) handleRibbonAction(buttonID string) {
 		r.ErrorMessage = "Unknown action: " + buttonID
 	}
 }
-func (r *Receptacle) Render() app.UI {
+func (r *Receptacle) OnUpperToggleCollapse(ctx app.Context) {
+	log.Printf("Upper Ribbon collapsed state: %v", r.IsUpperRibbonCollapsed)
+	r.IsUpperRibbonCollapsed = !r.IsUpperRibbonCollapsed
+	log.Printf("Upper Ribbon collapsed state changed to: %v", r.IsUpperRibbonCollapsed)
+	ctx.Update()
+}
+func (r *Receptacle) OnLowerToggleCollapse(ctx app.Context) {
+	log.Printf("Lower Ribbon collapsed state: %v", r.IsLowerRibbonCollapsed)
+	r.IsLowerRibbonCollapsed = !r.IsLowerRibbonCollapsed
+	log.Printf("Lower Ribbon collapsed state changed to: %v", r.IsLowerRibbonCollapsed)
+	ctx.Update()
+}
+func (re *Receptacle) onTabClick(ctx app.Context, tabID string) {
+	re.UpperActiveTab = tabID
+	log.Printf("receptacle Active tab changed to: %s", tabID)
+}
+func (re *Receptacle) Render() app.UI {
 	// 根据布局模式应用不同的类
 	layoutClass := "receptacle-vertical"
-	if r.LayoutMode == "horizontal" {
+	if re.LayoutMode == "horizontal" {
 		layoutClass = "receptacle-horizontal"
 	}
+	log.Printf("Receptacle upper activeTab: %s", re.UpperActiveTab)
+	log.Printf("Receptacle lower activeTab: %s", re.LowerActiveTab)
+	log.Printf("Receptacle upper collapsed: %v", re.IsUpperRibbonCollapsed)
 
 	return app.Div().Class("receptacle", layoutClass).Body(
 		&ribbon.Ribbon{
-			RibbonMenu:  r.ribbonMenu,
-			ActiveTab:   r.activeTab,
-			IsCollapsed: false,
-			OnTabClick: func(tabID string) {
-				r.activeTab = tabID
-				r.IsUpperRibbonCollapsed = false
-				log.Printf("Active tab changed to: %s", tabID)
-				// ctx.Update()
-			},
+			RibbonMenu:  re.upperMenu,
+			ActiveTab:   re.UpperActiveTab,
+			IsCollapsed: re.IsUpperRibbonCollapsed,
+			OnTabClick:  re.onTabClick,
 			OnButtonClick: func(buttonID string) {
-				r.handleRibbonAction(buttonID)
+				re.handleRibbonAction(buttonID)
 			},
-			OnToggleCollapse: func() {
-				r.IsLowerRibbonCollapsed = !r.IsLowerRibbonCollapsed
-				// ctx.Update()
-			},
-			IsLoading:      r.isLoading,
-			ErrorMessage:   r.ErrorMessage,
-			RibbonPosition: "upper",
-			LayoutMode:     r.LayoutMode,
+			OnToggleCollapse: re.OnUpperToggleCollapse,
+			IsLoading:        re.isLoading,
+			ErrorMessage:     re.ErrorMessage,
+			RibbonPosition:   "upper",
+			LayoutMode:       re.LayoutMode,
 		},
 		&Workspace{ // Ensure the widgets package is correctly imported
-			Document: r.Document,
+			Document: re.Document,
 			OnChange: func(document string) {
-				r.Document = document
+				re.Document = document
 				// ctx.Update()
 			},
 		},
 		&ribbon.Ribbon{
-			RibbonMenu:  r.ribbonMenu,
-			ActiveTab:   r.activeTab,
-			IsCollapsed: true,
-			OnTabClick: func(tabID string) {
-				r.activeTab = tabID
+			RibbonMenu:  re.lowerMenu,
+			ActiveTab:   re.LowerActiveTab,
+			IsCollapsed: re.IsLowerRibbonCollapsed,
+			OnTabClick: func(ctx app.Context, tabID string) {
+				re.LowerActiveTab = tabID
 				// ctx.Update()
 			},
 			OnButtonClick: func(buttonID string) {
-				r.handleRibbonAction(buttonID)
+				re.handleRibbonAction(buttonID)
 			},
-			OnToggleCollapse: func() {
-				r.IsLowerRibbonCollapsed = !r.IsLowerRibbonCollapsed
-				// ctx.Update()
-			},
-			IsLoading:      r.isLoading,
-			ErrorMessage:   r.ErrorMessage,
-			RibbonPosition: "lower",
-			LayoutMode:     r.LayoutMode,
+			OnToggleCollapse: re.OnLowerToggleCollapse,
+			IsLoading:        re.isLoading,
+			ErrorMessage:     re.ErrorMessage,
+			RibbonPosition:   "lower",
+			LayoutMode:       re.LayoutMode,
 		},
 	)
 

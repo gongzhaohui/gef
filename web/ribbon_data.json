@@ -6,6 +6,7 @@
             "groups": [
                 {
                     "title": "Clipboard",
+                    "name": "clipboard",
                     "buttons": [
                         {
                             "id": "paste",
@@ -31,36 +32,53 @@
                 },
                 {
                     "title": "Font",
-                    "buttons": [
+                    "name": "font",
+                    "groups": [
                         {
-                            "id": "font",
-                            "title": "Font",
-                            "icon": "fa-font"
+                            "name": "fontFamily",
+                            "buttons": [
+                                {
+                                    "id": "font",
+                                    "title": "Font",
+                                    "icon": "fa-font",
+                                    "group": "fontFamily"
+                                },
+                                {
+                                    "id": "size",
+                                    "title": "Size",
+                                    "icon": "fa-text-height",
+                                    "group": "fontFamily"
+                                }
+                            ]
                         },
                         {
-                            "id": "size",
-                            "title": "Size",
-                            "icon": "fa-text-height"
-                        },
-                        {
-                            "id": "bold",
-                            "title": "Bold",
-                            "icon": "fa-bold"
-                        },
-                        {
-                            "id": "italic",
-                            "title": "Italic",
-                            "icon": "fa-italic"
-                        },
-                        {
-                            "id": "underline",
-                            "title": "Underline",
-                            "icon": "fa-underline"
+                            "name": "fontStyle",
+                            "buttons": [
+                                {
+                                    "id": "bold",
+                                    "title": "Bold",
+                                    "icon": "fa-bold",
+                                    "group": "fontStyle"
+                                },
+                                {
+                                    "id": "italic",
+                                    "title": "Italic",
+                                    "icon": "fa-italic",
+                                    "group": "fontStyle"
+                                },
+                                {
+                                    "id": "underline",
+                                    "title": "Underline",
+                                    "icon": "fa-underline",
+                                    "group": "fontStyle"
+                                }
+                            ]
                         }
                     ]
                 },
                 {
                     "title": "Paragraph",
+                    "name": "paragraph",
                     "buttons": [
                         {
                             "id": "alignLeft",
@@ -96,6 +114,7 @@
                 },
                 {
                     "title": "Styles",
+                    "name": "styles",
                     "buttons": [
                         {
                             "id": "styles",
@@ -106,6 +125,7 @@
                 },
                 {
                     "title": "Editing",
+                    "name": "editing",
                     "buttons": [
                         {
                             "id": "find",
@@ -132,6 +152,7 @@
             "groups": [
                 {
                     "title": "Pages",
+                    "name": "pages",
                     "buttons": [
                         {
                             "id": "blankPage",
@@ -142,6 +163,7 @@
                 },
                 {
                     "title": "Tables",
+                    "name": "tables",
                     "buttons": [
                         {
                             "id": "table",
@@ -157,6 +179,7 @@
                 },
                 {
                     "title": "Illustrations",
+                    "name": "illustrations",
                     "buttons": [
                         {
                             "id": "picture",
@@ -182,6 +205,7 @@
                 },
                 {
                     "title": "Links",
+                    "name": "links",
                     "buttons": [
                         {
                             "id": "link",
@@ -197,6 +221,7 @@
                 },
                 {
                     "title": "Header & Footer",
+                    "name": "headerFooter",
                     "buttons": [
                         {
                             "id": "header",
@@ -223,6 +248,7 @@
             "groups": [
                 {
                     "title": "Page Setup",
+                    "name": "pageSetup",
                     "buttons": [
                         {
                             "id": "theme",
@@ -248,6 +274,7 @@
                 },
                 {
                     "title": "Paragraph",
+                    "name": "paragraphFormat",
                     "buttons": [
                         {
                             "id": "indent",
@@ -268,6 +295,7 @@
                 },
                 {
                     "title": "Arrange",
+                    "name": "arrange",
                     "buttons": [
                         {
                             "id": "position",
@@ -289,4 +317,4 @@
             ]
         }
     ]
-}    
+}

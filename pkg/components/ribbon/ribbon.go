@@ -12,9 +12,9 @@ type Ribbon struct {
 	RibbonMenu       types.RibbonMenu
 	ActiveTab        string
 	IsCollapsed      bool
-	OnTabClick       func(string)
+	OnTabClick       func(app.Context, string)
 	OnButtonClick    func(string)
-	OnToggleCollapse func()
+	OnToggleCollapse func(app.Context)
 	IsLoading        bool
 	ErrorMessage     string
 	RibbonPosition   string // "upper" 或 "lower"
@@ -22,18 +22,10 @@ type Ribbon struct {
 }
 
 func (r *Ribbon) OnMount(ctx app.Context) {
-	ctx.Handle("toggleLayout", r.ToggleLayout)
 }
 
 // ToggleLayout toggles the layout mode between "vertical" and "horizontal".
-func (r *Ribbon) ToggleLayout(ctx app.Context, action app.Action) {
-	if r.LayoutMode == "vertical" {
-		r.LayoutMode = "horizontal"
-	} else {
-		r.LayoutMode = "vertical"
-	}
-	ctx.Update()
-}
+
 func (r *Ribbon) Render() app.UI {
 	// log.Printf("Ribbon component rendering: %v", r.RibbonMenu)
 	if r.IsLoading {
@@ -64,11 +56,13 @@ func (r *Ribbon) Render() app.UI {
 	return app.Div().Class(ribbonClass).Body(
 
 		&TabBar{
-			Tabs:        r.RibbonMenu.Tabs,
-			ActiveTab:   r.ActiveTab,
-			IsCollapsed: r.IsCollapsed,
-			OnClick:     r.OnTabClick,
-			LayoutMode:  r.LayoutMode,
+			Tabs:             r.RibbonMenu.Tabs,
+			ActiveTab:        r.ActiveTab,
+			IsCollapsed:      r.IsCollapsed,
+			OnTabClick:       r.OnTabClick,
+			LayoutMode:       r.LayoutMode,
+			RibbonPosition:   r.RibbonPosition,
+			OnToggleCollapse: r.OnToggleCollapse,
 		},
 		app.If(!r.IsCollapsed, func() app.UI {
 			return &TabContent{
@@ -78,10 +72,10 @@ func (r *Ribbon) Render() app.UI {
 				OnButtonClick: r.OnButtonClick,
 			}
 		}),
-		&RibbonFooter{
-			IsCollapsed:      r.IsCollapsed,
-			OnToggleCollapse: r.OnToggleCollapse,
-			RibbonPosition:   r.RibbonPosition,
-		},
+		// &RibbonFooter{
+		// 	IsCollapsed:      r.IsCollapsed,
+		// 	OnToggleCollapse: r.OnToggleCollapse,
+		// 	RibbonPosition:   r.RibbonPosition,
+		// },
 	)
 }

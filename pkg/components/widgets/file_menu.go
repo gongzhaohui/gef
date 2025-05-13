@@ -17,7 +17,6 @@ func (f *FileMenu) Render() app.UI {
 			Class("layout-toggle").
 			Text("Toggle Layout").
 			OnClick(func(ctx app.Context, e app.Event) {
-				ctx.NewAction("toggleLayout")
 				if f.OnLayoutToggle != nil {
 					f.OnLayoutToggle(ctx)
 				}
