@@ -1,324 +1,335 @@
 /* 基础样式 */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 12px;
-    height: 100vh;
-    overflow: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 12px;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .office-app {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 /* 垂直布局（上中下） */
 .app-layout-vertical {
-    flex-direction: column;
+  flex-direction: column;
 }
 
 /* 水平布局（左中右） */
 .app-layout-horizontal {
-    flex-direction: row;
+  flex-direction: row;
 }
 .receptacle {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-     transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: all 0.3s ease;
 }
 
 /* 垂直布局（上中下） */
 .receptacle-vertical {
-    flex-direction: column;
-        width: 100%;
-    height: calc(100% - 55px);
-
+  flex-direction: column;
+  width: 100%;
+  height: calc(100% - 55px);
 }
 
 /* 水平布局（左中右） */
 .receptacle-horizontal {
-    flex-direction: row;
-    height: 100%;
-
+  flex-direction: row;
+  height: 100%;
 }
 /* 标题栏样式 */
 .title-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 30px;
-    background-color: #f0f0f0;
-    border-bottom: 1px solid #ccc;
-    padding: 0 10px;
-    flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #ccc;
+  padding: 0 10px;
+  flex-shrink: 0;
 }
 
 /* Ribbon样式 */
 .ribbon {
-    background-color: white;
-    border-bottom: 1px solid #ccc;
-    display: flex;
-    flex-direction: column;
-    transition: all 0.3s ease;
-    flex-shrink: 0;
+  background-color: white;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
 }
 
 /* 水平布局下的Ribbon样式 */
 .ribbon.horizontal {
-    flex-direction: row;
-    border-right: 1px solid #ccc;
-    border-bottom: none;
+  flex-direction: row;
+  border-right: 1px solid #ccc;
+  border-bottom: none;
 }
 
 /* 下部Ribbon样式 */
 .lower-ribbon {
-    border-top: 1px solid #ccc;
-    border-bottom: none;
+  border-top: 1px solid #ccc;
+  border-bottom: none;
 }
 
 .ribbon.collapsed {
-    min-height: 0;
+  min-height: 0;
 }
 .ribbon.horizontal.collapsed {
-    min-width: 0;
+  min-width: 0;
 }
 
 .ribbon.collapsed .tab-content {
-    display: none;
+  display: none;
 }
 
 /* 文件菜单样式 */
 .file-menu {
-    background-color: #1e4e79;
-    color: white;
-    padding: 5px 10px;
+  background-color: #1e4e79;
+  color: white;
+  padding: 5px 10px;
 }
 
 .file-button {
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-    font-size: 13px;
-    padding: 5px 10px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 5px 10px;
 }
 
 .file-button:hover {
-    background-color: #0072c6;
+  background-color: #0072c6;
 }
 
-/* 标签栏样式 */
 .tab-bar {
-     background-color: #1e4e79;
-    display: flex;
-    border-bottom: 1px solid #ccc;
-    flex-direction: row;
+  display: flex;
+  flex-wrap: nowrap; /* 禁止换行 */
+  background: #1a365d; /* 深蓝色背景 */
+}
+.tabs {
+  background-color: #1e4e79;
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  flex-direction: row;
 }
 
 /* 水平布局下的标签栏样式 */
 .tab-bar.horizontal {
-    flex-direction: column;
-    border-right: 1px solid #ccc;
-    border-bottom: none;
-    width: 50px;
+  width: 50px;
 }
-.tab-bar-actions{
-    justify-self: end
+.tabs.horizontal {
+  flex-direction: column;
+  border-right: 1px solid #ccc;
+  border-bottom: none;
+}
+.tab-bar-actions {
+  margin-left: auto; /* 自动右对齐 */
+  margin-top: 0;
+  color: white;
+  cursor: pointer;
+}
+.tab-bar-actions.horizontal {
+  margin-left: 0;
+  margin-top: auto; /* 自动下对齐 */
 }
 .tab {
-    padding: 8px 15px;
-    border: none;
-    background: none;
-    cursor: pointer;
-    font-size: 12px;
-    color: white;
-    transition: all 0.2s ease;
+  padding: 8px 15px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 12px;
+  color: white;
+  transition: all 0.2s ease;
 }
 .tab.horizontal {
-    writing-mode: vertical-rl;
-    text-orientation: upright;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
 }
 
 .tab.active {
-    background-color: gray;
-    border-bottom: 3px solid #0072c6;
-    font-weight: bold;
+  background-color: gray;
+  border-bottom: 3px solid #0072c6;
+  font-weight: bold;
 }
 
 /* 水平布局下的活动标签样式 */
 .ribbon.horizontal .tab.active {
-    border-bottom: none;
-    border-right: 3px solid #0072c6;
+  border-bottom: none;
+  border-right: 3px solid #0072c6;
 }
 
 .tab:hover:not(.active) {
-    background-color: #e6f2ff;
+  background-color: #e6f2ff;
 }
 
 .tab.collapsed {
-    padding: 4px 10px;
-    font-size: 11px;
+  padding: 4px 10px;
+  font-size: 11px;
 }
 
 /* 标签内容样式 */
 .tab-content {
-    padding: 5px;
+  padding: 5px;
 }
 
 /* 水平布局下的标签内容样式 */
 .ribbon.horizontal .tab-content {
-    flex: 1;
-    overflow-y: auto;
+  flex: 1;
+  overflow-y: auto;
 }
 
 .ribbon-row {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    gap: 10px;
-    padding: 5px 0;
-    height: 150px;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 5px 0;
+  height: 150px;
 }
 
 .ribbon-column {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    overflow-y: auto;
-    gap: 10px;
-    padding: 0 5px;
-    width: 150px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  overflow-y: auto;
+  gap: 10px;
+  padding: 0 5px;
+  width: 150px;
 }
 
 /* Ribbon组样式 */
 .ribbon-group {
-    min-width: 100px;
-    border-right: 1px solid #eee;
-    padding-right: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  min-width: 100px;
+  border-right: 1px solid #eee;
+  padding-right: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* 水平布局下的Ribbon组样式 */
 .ribbon.horizontal .ribbon-group {
-    min-height: 100px;
-    border-right: none;
-    border-bottom: 1px solid #eee;
-    padding-right: 0;
-    padding-bottom: 10px;
+  min-height: 100px;
+  border-right: none;
+  border-bottom: 1px solid #eee;
+  padding-right: 0;
+  padding-bottom: 10px;
 }
 
 .group-title {
-    text-align: center;
-    color: #666;
-    font-size: 11px;
-    margin-bottom: 5px;
+  text-align: center;
+  color: #666;
+  font-size: 11px;
+  margin-bottom: 5px;
 }
 
 .group-items {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .ribbon-button {
-    background: none;
-    border: 1px solid transparent;
-    border-radius: 2px;
-    padding: 8px 5px;
-    width: 70px;
-    margin: 2px;
-    cursor: pointer;
-    font-size: 11px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: all 0.2s ease;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  padding: 8px 5px;
+  width: 70px;
+  margin: 2px;
+  cursor: pointer;
+  font-size: 11px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.2s ease;
 }
 
 .ribbon-button:hover {
-    border-color: #c5dbec;
-    background-color: #e6f2ff;
+  border-color: #c5dbec;
+  background-color: #e6f2ff;
 }
 
 .ribbon-button:active {
-    border-color: #7da2ce;
-    background-color: #c5dbec;
+  border-color: #7da2ce;
+  background-color: #c5dbec;
 }
 
 /* Ribbon底部样式 */
 .ribbon-footer {
-    border-top: 1px solid #ccc;
-    text-align: right;
-    padding: 2px 5px;
-    background-color: #f5f5f5;
+  border-top: 1px solid #ccc;
+  text-align: right;
+  padding: 2px 5px;
+  background-color: #f5f5f5;
 }
 
 /* 下部Ribbon的底部样式 */
 .lower-ribbon .ribbon-footer {
-    border-top: none;
-    border-bottom: 1px solid #ccc;
+  border-top: none;
+  border-bottom: 1px solid #ccc;
 }
 
 .toggle-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 1px;
-    border-radius: 2px;
-    color: #333;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 1px;
+  border-radius: 2px;
+  color: #333;
 }
 
 .toggle-button:hover {
-    background-color: #e0e0e0;
+  background-color: #e0e0e0;
 }
 
 .toggle-button.collapsed i {
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 /* 工作区样式 */
 .workspace {
-    flex: 1;
-    overflow: auto;
-    padding: 10px;
-    background-color: #f9f9f9;
+  flex: 1;
+  overflow: auto;
+  padding: 10px;
+  background-color: #f9f9f9;
 }
 
 .document-editor {
-    width: 100%;
-    height: 100%;
-    border: none;
-    resize: none;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 14px;
-    padding: 10px;
-    outline: none;
-    background-color: white;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  width: 100%;
+  height: 100%;
+  border: none;
+  resize: none;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  padding: 10px;
+  outline: none;
+  background-color: white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 /* 状态栏样式 */
 .status-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 25px;
-    background-color: #f0f0f0;
-    border-top: 1px solid #ccc;
-    padding: 0 10px;
-    color: #666;
-    flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 25px;
+  background-color: #f0f0f0;
+  border-top: 1px solid #ccc;
+  padding: 0 10px;
+  color: #666;
+  flex-shrink: 0;
 }
 
 /* 水平布局下的状态栏样式 */
 .app-layout-horizontal .status-bar {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-}    
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}

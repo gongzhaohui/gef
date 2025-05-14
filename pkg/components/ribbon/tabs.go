@@ -25,10 +25,23 @@ func (t *TabBar) OnMount(ctx app.Context) {
 
 func (t *TabBar) Render() app.UI {
 	tabBarClass := "tab-bar"
+	tabsClass := "tabs"
+	actionsClass := "tab-bar-actions"
+	buttonClass := "collapse-button"
+	buttonText := "^"
 	if t.IsCollapsed {
+		buttonText = "v"
 	}
+
 	if t.LayoutMode == "horizontal" {
 		tabBarClass += " horizontal"
+		tabsClass += " horizontal"
+		actionsClass += " horizontal"
+		buttonClass += " horizontal"
+		buttonText = "<"
+		if t.IsCollapsed {
+			buttonText = ">"
+		}
 	}
 
 	tabs := make([]app.UI, len(t.Tabs))
@@ -43,8 +56,8 @@ func (t *TabBar) Render() app.UI {
 		}
 	}
 
-	return app.Div().Class(tabBarClass).Body(app.Div().Class("tabs").Body(tabs...), app.Div().Class("tab-bar-actions").Body(
-		app.Button().Class("collapse-button").Text("Collapse").OnClick(func(ctx app.Context, e app.Event) {
+	return app.Div().Class(tabBarClass).Body(app.Div().Class(tabsClass).Body(tabs...), app.Div().Class(actionsClass).Body(
+		app.Button().Class(buttonClass).Text(buttonText).OnClick(func(ctx app.Context, e app.Event) {
 			// ctx.NewAction("collapse")
 			t.OnToggleCollapse(ctx)
 		}),
