@@ -87,8 +87,10 @@ func (r *RibbonGroup) ToggleLayout(ctx app.Context, a app.Action) {
 }
 func (r *RibbonGroup) Render() app.UI {
 	className := "ribbon-group"
+	itemClassName := "group-item"
 	if r.LayoutMode == "horizontal" {
 		className += " horizontal"
+		itemClassName += " horizontal"
 	}
 
 	// 渲染普通按钮
@@ -128,7 +130,7 @@ func (r *RibbonGroup) Render() app.UI {
 
 	return app.Div().Class(className).Body(
 		app.Div().Class("group-title").Text(r.Group.Title),
-		app.Div().Class("group-items").Body(buttons...),
+		app.Div().Class(itemClassName).Body(buttons...),
 	)
 }
 

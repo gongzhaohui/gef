@@ -7,7 +7,8 @@ import (
 // TitleBar 组件
 type TitleBar struct {
 	app.Compo
-	DocumentTitle string
+	DocumentTitle  string
+	OnLayoutToggle func(app.Context)
 }
 
 func (t *TitleBar) Render() app.UI {
@@ -15,7 +16,9 @@ func (t *TitleBar) Render() app.UI {
 		app.Div().Class("app-title").Text("Office 2010 Style App"),
 		app.Div().Class("document-title").Text(t.DocumentTitle),
 		app.Div().Class("window-controls").Body(
-			app.Button().Class("window-button").Title("Minimize").Text("—"),
+			app.Button().Class("window-button").Title("Minimize").Text("—").OnClick(func(ctx app.Context, e app.Event) {
+				t.OnLayoutToggle(ctx)
+			}),
 			app.Button().Class("window-button").Title("Maximize").Text("□"),
 			app.Button().Class("window-button close").Title("Close").Text("×"),
 		),

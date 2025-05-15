@@ -11,28 +11,43 @@
                         {
                             "id": "paste",
                             "title": "Paste",
-                            "icon": "fa-clipboard"
+                            "icon": "fa-clipboard",
+                            "action": "pasteAction",
+                            "actionPath": "/clipboard/paste"
                         },
                         {
                             "id": "cut",
                             "title": "Cut",
-                            "icon": "fa-cut"
+                            "icon": "fa-cut",
+                            "action": "cutAction",
+                            "actionPath": "/clipboard/cut"
                         },
                         {
                             "id": "copy",
                             "title": "Copy",
-                            "icon": "fa-copy"
+                            "icon": "fa-copy",
+                            "action": "copyAction",
+                            "actionPath": "/clipboard/copy"
                         },
                         {
                             "id": "formatPainter",
                             "title": "Format Painter",
-                            "icon": "fa-paint-brush"
+                            "icon": "fa-paint-brush",
+                            "action": "formatPainterAction",
+                            "actionPath": "/clipboard/formatPainter"
                         }
                     ]
-                },
+                }
+            ]
+        },
+        {
+            "id": "font",
+            "title": "Font",
+            "name": "font",
+            "groups": [
                 {
-                    "title": "Font",
-                    "name": "font",
+                    "title": "Font Settings",
+                    "name": "fontSettings",
                     "groups": [
                         {
                             "name": "fontFamily",
@@ -41,13 +56,15 @@
                                     "id": "font",
                                     "title": "Font",
                                     "icon": "fa-font",
-                                    "group": "fontFamily"
+                                    "action": "fontAction",
+                                    "actionPath": "/font/font"
                                 },
                                 {
                                     "id": "size",
                                     "title": "Size",
                                     "icon": "fa-text-height",
-                                    "group": "fontFamily"
+                                    "action": "sizeAction",
+                                    "actionPath": "/font/size"
                                 }
                             ]
                         },
@@ -58,89 +75,139 @@
                                     "id": "bold",
                                     "title": "Bold",
                                     "icon": "fa-bold",
-                                    "group": "fontStyle"
+                                    "action": "boldAction",
+                                    "actionPath": "/font/bold"
                                 },
                                 {
                                     "id": "italic",
                                     "title": "Italic",
                                     "icon": "fa-italic",
-                                    "group": "fontStyle"
+                                    "action": "italicAction",
+                                    "actionPath": "/font/italic"
                                 },
                                 {
                                     "id": "underline",
                                     "title": "Underline",
                                     "icon": "fa-underline",
-                                    "group": "fontStyle"
+                                    "action": "underlineAction",
+                                    "actionPath": "/font/underline"
                                 }
                             ]
                         }
                     ]
-                },
+                }
+            ]
+        },
+        {
+            "id": "paragraph",
+            "title": "Paragraph",
+            "name": "paragraph",
+            "groups": [
                 {
-                    "title": "Paragraph",
-                    "name": "paragraph",
+                    "title": "Alignment",
+                    "name": "alignment",
                     "buttons": [
                         {
                             "id": "alignLeft",
                             "title": "Align Left",
-                            "icon": "fa-align-left"
+                            "icon": "fa-align-left",
+                            "action": "alignLeftAction",
+                            "actionPath": "/paragraph/alignLeft"
                         },
                         {
                             "id": "alignCenter",
                             "title": "Align Center",
-                            "icon": "fa-align-center"
+                            "icon": "fa-align-center",
+                            "action": "alignCenterAction",
+                            "actionPath": "/paragraph/alignCenter"
                         },
                         {
                             "id": "alignRight",
                             "title": "Align Right",
-                            "icon": "fa-align-right"
+                            "icon": "fa-align-right",
+                            "action": "alignRightAction",
+                            "actionPath": "/paragraph/alignRight"
                         },
                         {
                             "id": "alignJustify",
                             "title": "Align Justify",
-                            "icon": "fa-align-justify"
-                        },
+                            "icon": "fa-align-justify",
+                            "action": "alignJustifyAction",
+                            "actionPath": "/paragraph/alignJustify"
+                        }
+                    ]
+                },
+                {
+                    "title": "Lists",
+                    "name": "lists",
+                    "buttons": [
                         {
                             "id": "numbering",
                             "title": "Numbering",
-                            "icon": "fa-list-ol"
+                            "icon": "fa-list-ol",
+                            "action": "numberingAction",
+                            "actionPath": "/paragraph/numbering"
                         },
                         {
                             "id": "bullets",
                             "title": "Bullets",
-                            "icon": "fa-list-ul"
+                            "icon": "fa-list-ul",
+                            "action": "bulletsAction",
+                            "actionPath": "/paragraph/bullets"
                         }
                     ]
-                },
+                }
+            ]
+        },
+        {
+            "id": "styles",
+            "title": "Styles",
+            "name": "styles",
+            "groups": [
                 {
                     "title": "Styles",
-                    "name": "styles",
+                    "name": "stylesGroup",
                     "buttons": [
                         {
                             "id": "styles",
                             "title": "Styles",
-                            "icon": "fa-th-large"
+                            "icon": "fa-th-large",
+                            "action": "stylesAction",
+                            "actionPath": "/styles/styles"
                         }
                     ]
-                },
+                }
+            ]
+        },
+        {
+            "id": "editing",
+            "title": "Editing",
+            "name": "editing",
+            "groups": [
                 {
-                    "title": "Editing",
-                    "name": "editing",
+                    "title": "Editing Tools",
+                    "name": "editingTools",
                     "buttons": [
                         {
                             "id": "find",
                             "title": "Find",
-                            "icon": "fa-search"
+                            "icon": "fa-search",
+                            "action": "findAction",
+                            "actionPath": "/editing/find"
                         },
                         {
                             "id": "replace",
                             "title": "Replace",
-                            "icon": "fa-exchange"
+                            "icon": "fa-exchange",
+                            "action": "replaceAction",
+                            "actionPath": "/editing/replace"
                         },
                         {
                             "id": "select",
                             "title": "Select",
-                            "icon": "fa-mouse-pointer"
+                            "icon": "fa-mouse-pointer",
+                            "action": "selectAction",
+                            "actionPath": "/editing/select"
                         }
                     ]
                 }
@@ -153,90 +220,144 @@
                 {
                     "title": "Pages",
                     "name": "pages",
-                    "buttons": [
+                    "groups": [
                         {
-                            "id": "blankPage",
-                            "title": "Blank Page",
-                            "icon": "fa-file-o"
+                            "title": "Page Tools",
+                            "name": "pageTools",
+                            "buttons": [
+                                {
+                                    "id": "blankPage",
+                                    "title": "Blank Page",
+                                    "icon": "fa-file-o",
+                                    "action": "blankPageAction",
+                                    "actionPath": "/insert/blankPage"
+                                }
+                            ]
                         }
                     ]
                 },
                 {
                     "title": "Tables",
                     "name": "tables",
-                    "buttons": [
+                    "groups": [
                         {
-                            "id": "table",
-                            "title": "Table",
-                            "icon": "fa-table"
-                        },
-                        {
-                            "id": "insertChart",
-                            "title": "Chart",
-                            "icon": "fa-bar-chart"
+                            "title": "Table Tools",
+                            "name": "tableTools",
+                            "buttons": [
+                                {
+                                    "id": "table",
+                                    "title": "Table",
+                                    "icon": "fa-table",
+                                    "action": "tableAction",
+                                    "actionPath": "/insert/table"
+                                },
+                                {
+                                    "id": "insertChart",
+                                    "title": "Chart",
+                                    "icon": "fa-bar-chart",
+                                    "action": "insertChartAction",
+                                    "actionPath": "/insert/chart"
+                                }
+                            ]
                         }
                     ]
                 },
                 {
                     "title": "Illustrations",
                     "name": "illustrations",
-                    "buttons": [
+                    "groups": [
                         {
-                            "id": "picture",
-                            "title": "Picture",
-                            "icon": "fa-picture-o"
-                        },
-                        {
-                            "id": "shapes",
-                            "title": "Shapes",
-                            "icon": "fa-square-o"
-                        },
-                        {
-                            "id": "smartArt",
-                            "title": "SmartArt",
-                            "icon": "fa-sitemap"
-                        },
-                        {
-                            "id": "chart",
-                            "title": "Chart",
-                            "icon": "fa-bar-chart"
+                            "title": "Illustration Tools",
+                            "name": "illustrationTools",
+                            "buttons": [
+                                {
+                                    "id": "picture",
+                                    "title": "Picture",
+                                    "icon": "fa-picture-o",
+                                    "action": "pictureAction",
+                                    "actionPath": "/illustrations/picture"
+                                },
+                                {
+                                    "id": "shapes",
+                                    "title": "Shapes",
+                                    "icon": "fa-square-o",
+                                    "action": "shapesAction",
+                                    "actionPath": "/illustrations/shapes"
+                                },
+                                {
+                                    "id": "smartArt",
+                                    "title": "SmartArt",
+                                    "icon": "fa-sitemap",
+                                    "action": "smartArtAction",
+                                    "actionPath": "/illustrations/smartArt"
+                                },
+                                {
+                                    "id": "chart",
+                                    "title": "Chart",
+                                    "icon": "fa-bar-chart",
+                                    "action": "chartAction",
+                                    "actionPath": "/illustrations/chart"
+                                }
+                            ]
                         }
                     ]
                 },
                 {
                     "title": "Links",
                     "name": "links",
-                    "buttons": [
+                    "groups": [
                         {
-                            "id": "link",
-                            "title": "Link",
-                            "icon": "fa-link"
-                        },
-                        {
-                            "id": "bookmark",
-                            "title": "Bookmark",
-                            "icon": "fa-bookmark"
+                            "title": "Link Tools",
+                            "name": "linkTools",
+                            "buttons": [
+                                {
+                                    "id": "link",
+                                    "title": "Link",
+                                    "icon": "fa-link",
+                                    "action": "linkAction",
+                                    "actionPath": "/links/link"
+                                },
+                                {
+                                    "id": "bookmark",
+                                    "title": "Bookmark",
+                                    "icon": "fa-bookmark",
+                                    "action": "bookmarkAction",
+                                    "actionPath": "/links/bookmark"
+                                }
+                            ]
                         }
                     ]
                 },
                 {
                     "title": "Header & Footer",
                     "name": "headerFooter",
-                    "buttons": [
+                    "groups": [
                         {
-                            "id": "header",
-                            "title": "Header",
-                            "icon": "fa-header"
-                        },
-                        {
-                            "id": "footer",
-                            "title": "Footer",
-                            "icon": "fa-footer"
-                        },
-                        {
-                            "id": "pageNumber",
-                            "title": "Page Number",
-                            "icon": "fa-list-ol"
+                            "title": "Header/Footer Tools",
+                            "name": "headerFooterTools",
+                            "buttons": [
+                                {
+                                    "id": "header",
+                                    "title": "Header",
+                                    "icon": "fa-header",
+                                    "action": "headerAction",
+                                    "actionPath": "/headerFooter/header"
+                                },
+                                {
+                                    "id": "footer",
+                                    "title": "Footer",
+                                    "icon": "fa-footer",
+                                    "action": "footerAction",
+                                    "actionPath": "/headerFooter/footer"
+                                },
+                                {
+                                    "id": "pageNumber",
+                                    "title": "Page Number",
+                                    "icon": "fa-list-ol",
+                                    "action": "pageNumberAction",
+                                    "actionPath": "/headerFooter/pageNumber"
+                                }
+                            ]
                         }
                     ]
                 }
@@ -249,68 +370,106 @@
                 {
                     "title": "Page Setup",
                     "name": "pageSetup",
-                    "buttons": [
+                    "groups": [
                         {
-                            "id": "theme",
-                            "title": "Theme",
-                            "icon": "fa-paint-brush"
-                        },
-                        {
-                            "id": "margins",
-                            "title": "Margins",
-                            "icon": "fa-columns"
-                        },
-                        {
-                            "id": "orientation",
-                            "title": "Orientation",
-                            "icon": "fa-rotate-right"
-                        },
-                        {
-                            "id": "size",
-                            "title": "Size",
-                            "icon": "fa-arrows-alt"
+                            "title": "Setup Tools",
+                            "name": "setupTools",
+                            "buttons": [
+                                {
+                                    "id": "theme",
+                                    "title": "Theme",
+                                    "icon": "fa-paint-brush",
+                                    "action": "themeAction",
+                                    "actionPath": "/pageLayout/theme"
+                                },
+                                {
+                                    "id": "margins",
+                                    "title": "Margins",
+                                    "icon": "fa-columns",
+                                    "action": "marginsAction",
+                                    "actionPath": "/pageLayout/margins"
+                                },
+                                {
+                                    "id": "orientation",
+                                    "title": "Orientation",
+                                    "icon": "fa-rotate-right",
+                                    "action": "orientationAction",
+                                    "actionPath": "/pageLayout/orientation"
+                                },
+                                {
+                                    "id": "size",
+                                    "title": "Size",
+                                    "icon": "fa-arrows-alt",
+                                    "action": "sizeAction",
+                                    "actionPath": "/pageLayout/size"
+                                }
+                            ]
                         }
                     ]
                 },
                 {
                     "title": "Paragraph",
                     "name": "paragraphFormat",
-                    "buttons": [
+                    "groups": [
                         {
-                            "id": "indent",
-                            "title": "Increase Indent",
-                            "icon": "fa-indent"
-                        },
-                        {
-                            "id": "outdent",
-                            "title": "Decrease Indent",
-                            "icon": "fa-outdent"
-                        },
-                        {
-                            "id": "lineSpacing",
-                            "title": "Line Spacing",
-                            "icon": "fa-text-height"
+                            "title": "Paragraph Tools",
+                            "name": "paragraphTools",
+                            "buttons": [
+                                {
+                                    "id": "indent",
+                                    "title": "Increase Indent",
+                                    "icon": "fa-indent",
+                                    "action": "indentAction",
+                                    "actionPath": "/pageLayout/indent"
+                                },
+                                {
+                                    "id": "outdent",
+                                    "title": "Decrease Indent",
+                                    "icon": "fa-outdent",
+                                    "action": "outdentAction",
+                                    "actionPath": "/pageLayout/outdent"
+                                },
+                                {
+                                    "id": "lineSpacing",
+                                    "title": "Line Spacing",
+                                    "icon": "fa-text-height",
+                                    "action": "lineSpacingAction",
+                                    "actionPath": "/pageLayout/lineSpacing"
+                                }
+                            ]
                         }
                     ]
                 },
                 {
                     "title": "Arrange",
                     "name": "arrange",
-                    "buttons": [
+                    "groups": [
                         {
-                            "id": "position",
-                            "title": "Position",
-                            "icon": "fa-arrows"
-                        },
-                        {
-                            "id": "wrapText",
-                            "title": "Wrap Text",
-                            "icon": "fa-align-left"
-                        },
-                        {
-                            "id": "group",
-                            "title": "Group",
-                            "icon": "fa-object-group"
+                            "title": "Arrange Tools",
+                            "name": "arrangeTools",
+                            "buttons": [
+                                {
+                                    "id": "position",
+                                    "title": "Position",
+                                    "icon": "fa-arrows",
+                                    "action": "positionAction",
+                                    "actionPath": "/pageLayout/position"
+                                },
+                                {
+                                    "id": "wrapText",
+                                    "title": "Wrap Text",
+                                    "icon": "fa-align-left",
+                                    "action": "wrapTextAction",
+                                    "actionPath": "/pageLayout/wrapText"
+                                },
+                                {
+                                    "id": "group",
+                                    "title": "Group",
+                                    "icon": "fa-object-group",
+                                    "action": "groupAction",
+                                    "actionPath": "/pageLayout/group"
+                                }
+                            ]
                         }
                     ]
                 }

@@ -1,0 +1,754 @@
+{
+    "tabs": [
+        {
+            "id": "profile",
+            "title": "Profile",
+            "groups": [
+                {
+                    "title": "Account Settings",
+                    "name": "accountSettings",
+                    "buttons": [
+                        {
+                            "id": "changePassword",
+                            "title": "Change password",
+                            "icon": "fa-lock",
+                            "action": "changePasswordAction",
+                            "actionPath": "/profile/changePassword"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "userManagement",
+            "title": "User Management",
+            "groups": [
+                {
+                    "title": "User Configurations",
+                    "name": "userConfig",
+                    "groups": [
+                        {
+                            "title": "Basic Settings",
+                            "name": "basicSettings",
+                            "buttons": [
+                                {
+                                    "id": "userSetting",
+                                    "title": "User setting",
+                                    "icon": "fa-user-cog",
+                                    "action": "userSettingAction",
+                                    "actionPath": "/userManagement/userSetting"
+                                },
+                                {
+                                    "id": "groupSetting",
+                                    "title": "Group setting",
+                                    "icon": "fa-users-cog",
+                                    "action": "groupSettingAction",
+                                    "actionPath": "/userManagement/groupSetting"
+                                },
+                                {
+                                    "id": "departmentSetting",
+                                    "title": "Department setting",
+                                    "icon": "fa-sitemap",
+                                    "action": "departmentSettingAction",
+                                    "actionPath": "/userManagement/departmentSetting"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "Approval Systems",
+                    "name": "approvalSystems",
+                    "groups": [
+                        {
+                            "title": "PO Approvals",
+                            "name": "poApprovals",
+                            "buttons": [
+                                {
+                                    "id": "approvePOType",
+                                    "title": "Approve P/O Type",
+                                    "icon": "fa-check-double",
+                                    "action": "approvePOTypeAction",
+                                    "actionPath": "/userManagement/approvePOType"
+                                },
+                                {
+                                    "id": "approveSetting",
+                                    "title": "Approve setting",
+                                    "icon": "fa-sliders-h",
+                                    "action": "approveSettingAction",
+                                    "actionPath": "/userManagement/approveSetting"
+                                },
+                                {
+                                    "id": "approvePOSetting",
+                                    "title": "Approve P/O setting",
+                                    "icon": "fa-file-contract",
+                                    "action": "approvePOSettingAction",
+                                    "actionPath": "/userManagement/approvePOSetting"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "System Parameters",
+                    "name": "systemParameters",
+                    "groups": [
+                        {
+                            "title": "Technical Settings",
+                            "name": "technicalSettings",
+                            "buttons": [
+                                {
+                                    "id": "dateTimeSetting",
+                                    "title": "Date/Time setting",
+                                    "icon": "fa-clock",
+                                    "action": "dateTimeSettingAction",
+                                    "actionPath": "/userManagement/dateTimeSetting"
+                                },
+                                {
+                                    "id": "permissionSetting",
+                                    "title": "Permission setting",
+                                    "icon": "fa-user-shield",
+                                    "action": "permissionSettingAction",
+                                    "actionPath": "/userManagement/permissionSetting"
+                                },
+                                {
+                                    "id": "pathSetting",
+                                    "title": "Path setting",
+                                    "icon": "fa-project-diagram",
+                                    "action": "pathSettingAction",
+                                    "actionPath": "/userManagement/pathSetting"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "masterSettings",
+            "title": "Master Settings",
+            "groups": [
+                {
+                    "title": "Organization",
+                    "name": "organization",
+                    "groups": [
+                        {
+                            "title": "Core Entities",
+                            "name": "coreEntities",
+                            "buttons": [
+                                {
+                                    "id": "branch",
+                                    "title": "Branch",
+                                    "icon": "fa-code-branch",
+                                    "action": "branchAction",
+                                    "actionPath": "/masterSettings/branch"
+                                },
+                                {
+                                    "id": "maker",
+                                    "title": "Maker",
+                                    "icon": "fa-industry",
+                                    "action": "makerAction",
+                                    "actionPath": "/masterSettings/maker"
+                                },
+                                {
+                                    "id": "vendor",
+                                    "title": "Vendor",
+                                    "icon": "fa-truck-moving",
+                                    "action": "vendorAction",
+                                    "actionPath": "/masterSettings/vendor"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "Financial",
+                    "name": "financial",
+                    "groups": [
+                        {
+                            "title": "Currency & Units",
+                            "name": "currencyUnits",
+                            "buttons": [
+                                {
+                                    "id": "currency",
+                                    "title": "Currency",
+                                    "icon": "fa-coins",
+                                    "action": "currencyAction",
+                                    "actionPath": "/masterSettings/currency"
+                                },
+                                {
+                                    "id": "unit",
+                                    "title": "Unit",
+                                    "icon": "fa-weight-hanging",
+                                    "action": "unitAction",
+                                    "actionPath": "/masterSettings/unit"
+                                },
+                                {
+                                    "id": "groupPart",
+                                    "title": "Group part",
+                                    "icon": "fa-puzzle-piece",
+                                    "action": "groupPartAction",
+                                    "actionPath": "/masterSettings/groupPart"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "Technical",
+                    "name": "technical",
+                    "groups": [
+                        {
+                            "title": "Classifications",
+                            "name": "classifications",
+                            "buttons": [
+                                {
+                                    "id": "type",
+                                    "title": "Type",
+                                    "icon": "fa-tags",
+                                    "action": "typeAction",
+                                    "actionPath": "/masterSettings/type"
+                                },
+                                {
+                                    "id": "accountCode",
+                                    "title": "Account code",
+                                    "icon": "fa-hashtag",
+                                    "action": "accountCodeAction",
+                                    "actionPath": "/masterSettings/accountCode"
+                                },
+                                {
+                                    "id": "typeImportDuty",
+                                    "title": "Type import duty",
+                                    "icon": "fa-dolly-flatbed",
+                                    "action": "typeImportDutyAction",
+                                    "actionPath": "/masterSettings/typeImportDuty"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "Facilities",
+                    "name": "facilities",
+                    "groups": [
+                        {
+                            "title": "Room Management",
+                            "name": "roomManagement",
+                            "buttons": [
+                                {
+                                    "id": "room",
+                                    "title": "Room",
+                                    "icon": "fa-door-closed",
+                                    "action": "roomAction",
+                                    "actionPath": "/masterSettings/room"
+                                },
+                                {
+                                    "id": "rateDaily",
+                                    "title": "Rate daily",
+                                    "icon": "fa-chart-line",
+                                    "action": "rateDailyAction",
+                                    "actionPath": "/masterSettings/rateDaily"
+                                },
+                                {
+                                    "id": "rateDailyLink",
+                                    "title": "Rate daily link",
+                                    "icon": "fa-link",
+                                    "action": "rateDailyLinkAction",
+                                    "actionPath": "/masterSettings/rateDailyLink"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "Machine Systems",
+                    "name": "machineSystems",
+                    "groups": [
+                        {
+                            "title": "Machine Controls",
+                            "name": "machineControls",
+                            "groups": [
+                                {
+                                    "title": "Maintenance",
+                                    "name": "maintenance",
+                                    "buttons": [
+                                        {
+                                            "id": "machineMaster",
+                                            "title": "Machine master",
+                                            "icon": "fa-cogs",
+                                            "action": "machineMasterAction",
+                                            "actionPath": "/masterSettings/machineMaster"
+                                        },
+                                        {
+                                            "id": "machineBudget",
+                                            "title": "Machine budget",
+                                            "icon": "fa-file-invoice-dollar",
+                                            "action": "machineBudgetAction",
+                                            "actionPath": "/masterSettings/machineBudget"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Parts",
+                                    "name": "parts",
+                                    "buttons": [
+                                        {
+                                            "id": "machinePart",
+                                            "title": "Machine part",
+                                            "icon": "fa-cog",
+                                            "action": "machinePartAction",
+                                            "actionPath": "/masterSettings/machinePart"
+                                        },
+                                        {
+                                            "id": "machineChangePart",
+                                            "title": "Machine change part",
+                                            "icon": "fa-exchange-alt",
+                                            "action": "machineChangePartAction",
+                                            "actionPath": "/masterSettings/machineChangePart"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "emailSettings",
+            "title": "E-mail Settings",
+            "groups": [
+                {
+                    "title": "Email Management",
+                    "name": "emailManagement",
+                    "groups": [
+                        {
+                            "title": "Templates",
+                            "name": "templates",
+                            "buttons": [
+                                {
+                                    "id": "template",
+                                    "title": "Template",
+                                    "icon": "fa-envelope",
+                                    "action": "templateAction",
+                                    "actionPath": "/emailSettings/template"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Status Tracking",
+                            "name": "statusTracking",
+                            "buttons": [
+                                {
+                                    "id": "status",
+                                    "title": "Status",
+                                    "icon": "fa-clipboard-check",
+                                    "action": "statusAction",
+                                    "actionPath": "/emailSettings/status"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Logs",
+                            "name": "logs",
+                            "buttons": [
+                                {
+                                    "id": "clearedLog",
+                                    "title": "Cleared log",
+                                    "icon": "fa-trash-alt",
+                                    "action": "clearedLogAction",
+                                    "actionPath": "/emailSettings/clearedLog"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "partManagement",
+            "title": "Part Management",
+            "groups": [
+                {
+                    "title": "Inventory Control",
+                    "name": "inventoryControl",
+                    "groups": [
+                        {
+                            "title": "Stock Management",
+                            "name": "stockManagement",
+                            "buttons": [
+                                {
+                                    "id": "partStock",
+                                    "title": "Part stock",
+                                    "icon": "fa-boxes",
+                                    "action": "partStockAction",
+                                    "actionPath": "/partManagement/partStock"
+                                },
+                                {
+                                    "id": "stockBalance",
+                                    "title": "Stock balance/movement",
+                                    "icon": "fa-balance-scale",
+                                    "action": "stockBalanceAction",
+                                    "actionPath": "/partManagement/stockBalance"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "Purchasing",
+                    "name": "purchasing",
+                    "groups": [
+                        {
+                            "title": "Order Processing",
+                            "name": "orderProcessing",
+                            "buttons": [
+                                {
+                                    "id": "purchaseOrder",
+                                    "title": "Purchase order",
+                                    "icon": "fa-file-invoice",
+                                    "action": "purchaseOrderAction",
+                                    "actionPath": "/partManagement/purchaseOrder"
+                                },
+                                {
+                                    "id": "prList",
+                                    "title": "P/R list",
+                                    "icon": "fa-list-alt",
+                                    "action": "prListAction",
+                                    "actionPath": "/partManagement/prList"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "Receiving",
+                    "name": "receiving",
+                    "groups": [
+                        {
+                            "title": "Receiving Docs",
+                            "name": "receivingDocs",
+                            "buttons": [
+                                {
+                                    "id": "receiveRequestSheet",
+                                    "title": "Receive request sheet",
+                                    "icon": "fa-clipboard-list",
+                                    "action": "receiveRequestSheetAction",
+                                    "actionPath": "/partManagement/receiveRequestSheet"
+                                },
+                                {
+                                    "id": "receiveCoverSheet",
+                                    "title": "Receive cover sheet",
+                                    "icon": "fa-file-import",
+                                    "action": "receiveCoverSheetAction",
+                                    "actionPath": "/partManagement/receiveCoverSheet"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "Transactions",
+                    "name": "transactions",
+                    "groups": [
+                        {
+                            "title": "Adjustments",
+                            "name": "adjustments",
+                            "buttons": [
+                                {
+                                    "id": "qtyCancel",
+                                    "title": "Q'ty to cancel",
+                                    "icon": "fa-ban",
+                                    "action": "qtyCancelAction",
+                                    "actionPath": "/partManagement/qtyCancel"
+                                },
+                                {
+                                    "id": "adjustStock",
+                                    "title": "Adjust stock",
+                                    "icon": "fa-sliders-h",
+                                    "action": "adjustStockAction",
+                                    "actionPath": "/partManagement/adjustStock"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "quotationRequest",
+            "title": "Quotation Request",
+            "groups": [
+                {
+                    "title": "Request Management",
+                    "name": "requestManagement",
+                    "buttons": [
+                        {
+                            "id": "quotationRequest",
+                            "title": "Quotation request",
+                            "icon": "fa-file-invoice-dollar",
+                            "action": "quotationRequestAction",
+                            "actionPath": "/quotationRequest/main"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "requestSheet",
+            "title": "Request Sheet",
+            "groups": [
+                {
+                    "title": "Request Management",
+                    "name": "requestManagement",
+                    "buttons": [
+                        {
+                            "id": "requestSheet",
+                            "title": "Request Sheet",
+                            "icon": "fa-file-alt",
+                            "action": "requestSheetAction",
+                            "actionPath": "/requestSheet/main"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "purchaseOrder",
+            "title": "Purchase Order",
+            "groups": [
+                {
+                    "title": "Approval Workflow",
+                    "name": "approvalWorkflow",
+                    "groups": [
+                        {
+                            "title": "Document Approvals",
+                            "name": "docApprovals",
+                            "buttons": [
+                                {
+                                    "id": "approveReqSheetHead",
+                                    "title": "Approve req. sheet (Head)",
+                                    "icon": "fa-file-signature",
+                                    "action": "approveReqSheetHeadAction",
+                                    "actionPath": "/purchaseOrder/approveReqSheetHead"
+                                },
+                                {
+                                    "id": "approveReqSheetOrder",
+                                    "title": "Approve req. sheet (Order)",
+                                    "icon": "fa-clipboard-check",
+                                    "action": "approveReqSheetOrderAction",
+                                    "actionPath": "/purchaseOrder/approveReqSheetOrder"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "PO Approvals",
+                            "name": "poApprovals",
+                            "buttons": [
+                                {
+                                    "id": "approvePO",
+                                    "title": "Approve P/O",
+                                    "icon": "fa-stamp",
+                                    "action": "approvePOAction",
+                                    "actionPath": "/purchaseOrder/approvePO"
+                                },
+                                {
+                                    "id": "approvePart",
+                                    "title": "Approve part",
+                                    "icon": "fa-check-double",
+                                    "action": "approvePartAction",
+                                    "actionPath": "/purchaseOrder/approvePart"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "sparePartRoom",
+            "title": "Spare Part Room",
+            "groups": [
+                {
+                    "title": "Inventory Operations",
+                    "name": "inventoryOperations",
+                    "groups": [
+                        {
+                            "title": "Document Management",
+                            "name": "docManagement",
+                            "buttons": [
+                                {
+                                    "id": "prList",
+                                    "title": "P/R list",
+                                    "icon": "fa-list-ol",
+                                    "action": "prListAction",
+                                    "actionPath": "/sparePartRoom/prList"
+                                },
+                                {
+                                    "id": "receiveList",
+                                    "title": "Receive list",
+                                    "icon": "fa-clipboard-list",
+                                    "action": "receiveListAction",
+                                    "actionPath": "/sparePartRoom/receiveList"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Part Transactions",
+                            "name": "partTransactions",
+                            "buttons": [
+                                {
+                                    "id": "returnPart",
+                                    "title": "Return part",
+                                    "icon": "fa-undo-alt",
+                                    "action": "returnPartAction",
+                                    "actionPath": "/sparePartRoom/returnPart"
+                                },
+                                {
+                                    "id": "movePart",
+                                    "title": "Move part",
+                                    "icon": "fa-arrows-alt",
+                                    "action": "movePartAction",
+                                    "actionPath": "/sparePartRoom/movePart"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "Stock Control",
+                    "name": "stockControl",
+                    "groups": [
+                        {
+                            "title": "Adjustments",
+                            "name": "adjustments",
+                            "buttons": [
+                                {
+                                    "id": "adjustStock",
+                                    "title": "Adjust stock",
+                                    "icon": "fa-sliders-h",
+                                    "action": "adjustStockAction",
+                                    "actionPath": "/sparePartRoom/adjustStock"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "checkStock",
+            "title": "Check Stock",
+            "groups": [
+                {
+                    "title": "Stock Verification",
+                    "name": "stockVerification",
+                    "buttons": [
+                        {
+                            "id": "checkStock",
+                            "title": "Check stock",
+                            "icon": "fa-clipboard-check",
+                            "action": "checkStockAction",
+                            "actionPath": "/checkStock/main"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "approve",
+            "title": "Approve",
+            "groups": [
+                {
+                    "title": "Approval Dashboard",
+                    "name": "approvalDashboard",
+                    "buttons": [
+                        {
+                            "id": "approveMain",
+                            "title": "Approve",
+                            "icon": "fa-check-circle",
+                            "action": "approveMainAction",
+                            "actionPath": "/approve/main"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "reportSummary",
+            "title": "Report Summary",
+            "groups": [
+                {
+                    "title": "Reporting",
+                    "name": "reporting",
+                    "buttons": [
+                        {
+                            "id": "reportSummary",
+                            "title": "Report summary",
+                            "icon": "fa-chart-bar",
+                            "action": "reportSummaryAction",
+                            "actionPath": "/reportSummary/main"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "database",
+            "title": "Database",
+            "groups": [
+                {
+                    "title": "Database Management",
+                    "name": "dbManagement",
+                    "buttons": [
+                        {
+                            "id": "database",
+                            "title": "Database",
+                            "icon": "fa-database",
+                            "action": "databaseAction",
+                            "actionPath": "/database/main"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "shipping",
+            "title": "Shipping",
+            "groups": [
+                {
+                    "title": "Shipping Operations",
+                    "name": "shippingOperations",
+                    "buttons": [
+                        {
+                            "id": "shipping",
+                            "title": "Shipping",
+                            "icon": "fa-shipping-fast",
+                            "action": "shippingAction",
+                            "actionPath": "/shipping/main"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "manual",
+            "title": "Manual",
+            "groups": [
+                {
+                    "title": "Documentation",
+                    "name": "documentation",
+                    "buttons": [
+                        {
+                            "id": "manual",
+                            "title": "Manual",
+                            "icon": "fa-book",
+                            "action": "manualAction",
+                            "actionPath": "/manual/main"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,84 +1,82 @@
 {
-    "unicharm": {
-        "Tester": {
-            "Profile": {
-                "Change password": {}
-            },
-            "User management": {
-                "User setting": {},
-                "Group setting": {},
-                "Department setting": {},
-                "Approve P/O Type": {},
-                "Approve setting": {},
-                "Approve P/O setting": {},
-                "Date/Time setting": {},
-                "Permission setting": {},
-                "Path setting": {}
-            },
-            "Master setting": {
-                "Branch": {},
-                "Maker": {},
-                "Vendor": {},
-                "Currency": {},
-                "Unit": {},
-                "Group part": {},
-                "Type": {},
-                "Account code": {},
-                "Type import duty": {},
-                "Room": {},
-                "Rate daily": {},
-                "Rate daily link setting": {},
-                "Machine": {
-                    "Machine master": {},
-                    "Machine budget": {},
-                    "Machine part": {},
-                    "Machine change part": {}
-                }
-            },
-            "E-mail setting": {
-                "Template": {},
-                "Status": {},
-                "Cleared log": {}
-            },
-            "Part management": {
-                "Part setting": {},
-                "Part stock": {},
-                "Stock balance/movement": {},
-                "Purchase order": {},
-                "P/R list": {},
-                "Receive request sheet": {},
-                "Receive cover sheet": {},
-                "Q'ty to cancel": {},
-                "Import duty": {},
-                "Purchase confirm part": {},
-                "Quotation request": {}
-            },
-            "Request sheet": {},
-            "Purchase order": {
-                "Approve": {
-                    "Approve req. sheet (Head)": {},
-                    "Approve req. sheet (Order)": {},
-                    "Approve P/O": {},
-                    "Approve part": {},
-                    "Approve adjust stock": {}
-                }
-            },
-            "Spare part room": {
-                "P/R list": {},
-                "Receive list": {},
-                "Cover sheet": {},
-                "Return part": {},
-                "Borrow list": {},
-                "Repair list": {},
-                "Move part": {},
-                "Adjust stock": {}
-            },
-            "Check stock": {},
-            "Approve": {},
-            "Report summary": {},
-            "Database": {},
-            "Shipping": {},
-            "Manual": {}
-        }
+    "tabs": {
+        "Profile": {
+            "Change password": {}
+        },
+        "User management": {
+            "User setting": {},
+            "Group setting": {},
+            "Department setting": {},
+            "Approve P/O Type": {},
+            "Approve setting": {},
+            "Approve P/O setting": {},
+            "Date/Time setting": {},
+            "Permission setting": {},
+            "Path setting": {}
+        },
+        "Master setting": {
+            "Branch": {},
+            "Maker": {},
+            "Vendor": {},
+            "Currency": {},
+            "Unit": {},
+            "Group part": {},
+            "Type": {},
+            "Account code": {},
+            "Type import duty": {},
+            "Room": {},
+            "Rate daily": {},
+            "Rate daily link setting": {},
+            "Machine": {
+                "Machine master": {},
+                "Machine budget": {},
+                "Machine part": {},
+                "Machine change part": {}
+            }
+        },
+        "E-mail setting": {
+            "Template": {},
+            "Status": {},
+            "Cleared log": {}
+        },
+        "Part management": {
+            "Part setting": {},
+            "Part stock": {},
+            "Stock balance/movement": {},
+            "Purchase order": {},
+            "P/R list": {},
+            "Receive request sheet": {},
+            "Receive cover sheet": {},
+            "Q'ty to cancel": {},
+            "Import duty": {},
+            "Purchase confirm part": {},
+            "Quotation request": {}
+        },
+        "Request sheet": {},
+        "Purchase order": {
+            "Approve": {
+                "Approve req. sheet (Head)": {},
+                "Approve req. sheet (Order)": {},
+                "Approve P/O": {},
+                "Approve part": {},
+                "Approve adjust stock": {}
+            }
+        },
+        "Spare part room": {
+            "P/R list": {},
+            "Receive list": {},
+            "Cover sheet": {},
+            "Return part": {},
+            "Borrow list": {},
+            "Repair list": {},
+            "Move part": {},
+            "Adjust stock": {}
+        },
+        "Check stock": {},
+        "Approve": {},
+        "Report summary": {},
+        "Database": {},
+        "Shipping": {},
+        "Manual": {}
     }
 }

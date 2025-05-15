@@ -30,10 +30,13 @@ func (a *OfficeApp) Render() app.UI {
 	layoutClass := "app-layout-vertical"
 
 	return app.Div().Class("office-app", layoutClass).Body(
-		&widgets.TitleBar{DocumentTitle: a.document},
-		&widgets.FileMenu{
+		&widgets.TitleBar{
+			DocumentTitle:  a.document,
 			OnLayoutToggle: a.toggleLayout,
 		},
+		// &widgets.FileMenu{
+		// 	OnLayoutToggle: a.toggleLayout,
+		// },
 		&widgets.Receptacle{
 			LayoutMode: a.layoutMode,
 		},

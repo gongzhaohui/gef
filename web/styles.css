@@ -23,18 +23,13 @@ body {
 .app-layout-horizontal {
   flex-direction: row;
 }
+
+/* 垂直布局（上中下） */
 .receptacle {
   display: flex;
   flex-direction: column;
   height: 100%;
   transition: all 0.3s ease;
-}
-
-/* 垂直布局（上中下） */
-.receptacle-vertical {
-  flex-direction: column;
-  width: 100%;
-  height: calc(100% - 55px);
 }
 
 /* 水平布局（左中右） */
@@ -123,6 +118,7 @@ body {
 /* 水平布局下的标签栏样式 */
 .tab-bar.horizontal {
   width: 50px;
+  flex-direction: column;
 }
 .tabs.horizontal {
   flex-direction: column;
@@ -132,8 +128,18 @@ body {
 .tab-bar-actions {
   margin-left: auto; /* 自动右对齐 */
   margin-top: 0;
+  background: none;
+
   color: white;
   cursor: pointer;
+}
+.collapse-button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 5px 10px;
 }
 .tab-bar-actions.horizontal {
   margin-left: 0;
@@ -213,6 +219,14 @@ body {
   flex-direction: column;
   align-items: center;
 }
+.sub-group {
+  min-width: 100px;
+  border-right: 1px solid #eee;
+  padding-right: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 /* 水平布局下的Ribbon组样式 */
 .ribbon.horizontal .ribbon-group {
@@ -230,12 +244,13 @@ body {
   margin-bottom: 5px;
 }
 
-.group-items {
+.group-item {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
 }
-
+.group-item.horizontal {
+  flex-direction: column;
+}
 .ribbon-button {
   background: none;
   border: 1px solid transparent;
