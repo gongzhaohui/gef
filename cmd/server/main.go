@@ -1,10 +1,11 @@
 package main
 
 import (
-	"gef/pkg/api"
 	"os"
 	"path/filepath"
 	"strings"
+
+	"github.com/gongzhaohui/gef/internal/api"
 
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"

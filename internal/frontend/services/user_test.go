@@ -6,7 +6,7 @@ import (
 	"log"
 	"time"
 
-	"gef/pkg/model"
+	"github.com/gongzhaohui/gef/internal/backend/models"
 )
 
 func test() {
@@ -23,7 +23,7 @@ func test() {
 	)
 
 	// 创建用户
-	newUser := model.User{
+	newUser := models.User_Dto{
 		Name:  "John Doe",
 		Email: "john@example.com",
 		Age:   30,

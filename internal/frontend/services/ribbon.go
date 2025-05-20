@@ -2,9 +2,10 @@ package services
 
 import (
 	"encoding/json"
-	"gef/pkg/components/ribbon/types"
 	"log"
 	"net/http"
+
+	"github.com/gongzhaohui/gef/internal/frontend/components/ribbon/types"
 )
 
 // RibbonService 提供Ribbon菜单相关服务

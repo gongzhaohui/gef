@@ -5,6 +5,7 @@
         "fasttemplate",
         "GOARCH",
         "gommon",
+        "gongzhaohui",
         "GOROOT",
         "isatty",
         "labstack",

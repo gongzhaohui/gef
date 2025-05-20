@@ -1,10 +1,11 @@
 package widgets
 
 import (
-	"gef/pkg/components/ribbon"
-	"gef/pkg/components/ribbon/types"
-	"gef/pkg/services"
 	"log"
+
+	"github.com/gongzhaohui/gef/internal/frontend/components/ribbon"
+	"github.com/gongzhaohui/gef/internal/frontend/components/ribbon/types"
+	"github.com/gongzhaohui/gef/internal/frontend/services"
 
 	"github.com/maxence-charriere/go-app/v10/pkg/app"
 )

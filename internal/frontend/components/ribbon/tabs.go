@@ -3,7 +3,7 @@ package ribbon
 // Ribbon组件
 
 import (
-	"gef/pkg/components/ribbon/types"
+	"github.com/gongzhaohui/gef/internal/frontend/components/ribbon/types"
 
 	"github.com/maxence-charriere/go-app/v10/pkg/app"
 )

@@ -1,9 +1,10 @@
 package main
 
 import (
-	"gef/pkg/components/widgets"
 	"log"
 	"net/http"
+
+	"github.com/gongzhaohui/gef/internal/frontend/components/widgets"
 
 	"github.com/maxence-charriere/go-app/v10/pkg/app"
 )
